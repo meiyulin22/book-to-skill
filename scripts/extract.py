@@ -62,7 +62,7 @@ SUPPORTED_EXTENSIONS = {
 PYTHON_DEPENDENCIES = {
     "docling": "docling",
     "paddlex": "paddleocr[all]",
-    "paddlepaddle": "paddlepaddle",
+    "paddle": "paddlepaddle",
     "PyPDF2": "PyPDF2",
     "pdfminer": "pdfminer.six",
     "ebooklib": "ebooklib",
@@ -187,7 +187,7 @@ def prepare_dependencies(ext: str, extraction_mode: str, install_mode: str) -> N
     if ext == ".pdf" and extraction_mode == "paddleocr":
         offer_dependency_install(
             feature="PaddleOCR PDF extraction (image/scanned PDFs, Chinese documents)",
-            module_names=["paddlex", "paddlepaddle"],
+            module_names=["paddlex", "paddle"],
             fallback="the Docling or pdftotext fallback chain",
             install_mode=install_mode,
         )
